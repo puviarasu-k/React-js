@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import userContext from "./context";
 import Reduxhome from "./redexhome";
 import Reduxresult from "./reduxresult";
+import Apicall from "./apicall";
+import Scroll from "./scroll";
 function App() {
   const [user, setuser] = useState("");
   const [pass, setpass] = useState("");
@@ -17,6 +19,9 @@ function App() {
           <Route path='/result' element={<Result />} />
           <Route path='/reduxhome' element={<Reduxhome />} />
           <Route path='/reduxresult' element={<Reduxresult />} />
+          <Route path='/reduxresult' element={<Reduxresult />} />
+          <Route path='/apicall' element={<Apicall />} />
+          <Route path='/scroll' element={<Scroll />} />
         </Routes>
       </userContext.Provider>
     </BrowserRouter>

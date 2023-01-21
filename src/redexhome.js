@@ -1,8 +1,10 @@
 import { TextField, Button } from "@mui/material";
+import React, { Suspense } from 'react'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { store } from "./index";
 import NewComp from "./newcomp";
+// const NewComp = React.lazy(() => import('./newcomp'));
 function Reduxhome() {
     let navigate = useNavigate();
     const [firstname, setfn] = useState("")
@@ -49,7 +51,9 @@ function Reduxhome() {
                 <TextField id="outlined-basic" label="lastname" value={lastname} onChange={ln} variant="outlined" style={{ margin: 10 }} />
                 {/* <Button variant="contained" onClick={buttonclick}>SUBMIT</Button> */}
             </div>
-            <NewComp />
+            <Suspense fallback={<div>Loading...</div>}>
+                <NewComp />
+            </Suspense>
         </>
     );
 }
